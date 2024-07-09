@@ -1,0 +1,28 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+//    protected $connection = 'pgsql';
+//
+//    public function up(): void
+//    {
+//        Schema::connection('pgsql')->create('nomenclature_property_list', function (Blueprint $table) {
+//            $table->id();
+//            $table->unsignedBigInteger('property_id');
+//            $table->text('value');
+//
+//            $table->foreign('property_id')
+//                ->references('id')
+//                ->on('nomenclature_properties');
+//        });
+//    }
+//
+//    public function down(): void
+//    {
+//        Schema::connection('pgsql')->dropIfExists('nomenclature_property_list');
+//    }
+};
