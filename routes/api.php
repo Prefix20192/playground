@@ -14,3 +14,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::post('/register', [App\Http\Controllers\Api\User\RegisterController::class, '__invoke'])->name('register');
+Route::post('/login', [App\Http\Controllers\Api\User\LoginController::class, '__invoke'])->name('login');
