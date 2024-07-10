@@ -11,9 +11,9 @@ class RegisterController extends Controller
 {
     public function __invoke(RegisterRequest $request, RegisterUserAction $action): JsonResponse
     {
-        $token = $action->__invoke($request->all());
+        $token = $action->__invoke($request->toDTO());
         return response()->json([
-            "token" =>$token
+            "token" => $token
         ], 201);
     }
 }
