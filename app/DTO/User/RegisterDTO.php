@@ -1,10 +1,10 @@
 <?php
 
-namespace App\DTO;
+namespace App\DTO\User;
 
 use Spatie\DataTransferObject\DataTransferObject;
 
-class RegisterUserDTO extends DataTransferObject
+class RegisterDTO extends DataTransferObject
 {
     public readonly string $name;
     public readonly string $email;

@@ -2,12 +2,11 @@
 
 namespace App\Http\Requests\Api\User;
 
-use App\DTO\RegisterUserDTO;
-use Illuminate\Foundation\Http\FormRequest;
+use App\DTO\User\RegisterDTO;
 use Illuminate\Contracts\Validation\Validator;
-use Illuminate\Validation\ValidationException;
+use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\JsonResponse;
-use Spatie\DataTransferObject\Exceptions\UnknownProperties;
+use Illuminate\Validation\ValidationException;
 
 class RegisterRequest extends FormRequest
 {
@@ -60,9 +59,9 @@ class RegisterRequest extends FormRequest
         throw new ValidationException($validator, $response);
     }
 
-    public function toDTO(): RegisterUserDTO
+    public function toDTO(): RegisterDTO
     {
-        return new RegisterUserDTO(
+        return new RegisterDTO(
             name: $this->name,
             email: $this->email,
             password: $this->password,

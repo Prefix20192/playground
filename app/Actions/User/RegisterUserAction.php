@@ -2,13 +2,13 @@
 
 namespace App\Actions\User;
 
-use App\DTO\RegisterUserDTO;
+use App\DTO\User\RegisterDTO;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 
 final class RegisterUserAction
 {
-    public function __invoke(RegisterUserDTO $registerUserDTO): string
+    public function __invoke(RegisterDTO $registerUserDTO): string
     {
         $user = User::create([
             'name' => $registerUserDTO->name,
