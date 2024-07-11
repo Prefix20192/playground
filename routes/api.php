@@ -13,5 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::post('/register', [App\Http\Controllers\Api\User\RegisterController::class, '__invoke'])->name('register');
-Route::post('/login', [App\Http\Controllers\Api\User\LoginController::class, '__invoke'])->name('login');
+Route::middleware('throttle:60,1')->group(
+    function () {
+        Route::post('/register', [App\Http\Controllers\Api\User\RegisterController::class, '__invoke'])->name('register');
+        Route::post('/login', [App\Http\Controllers\Api\User\LoginController::class, '__invoke'])->name('login');
+        Route::post('/recovery/password', [App\Http\Controllers\Api\User\RecoveryPasswordController::class, '__invoke'])->name('recovery.password');
+        Route::post('/reset/password', [App\Http\Controllers\Api\User\ResetPasswordController::class, '__invoke'])->name('password.reset');
+    }
+);
