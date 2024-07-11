@@ -6,6 +6,9 @@ use Spatie\DataTransferObject\DataTransferObject;
 
 class LoginDTO extends DataTransferObject
 {
-    public readonly string $email;
-    public readonly string $password;
+    public function __construct(
+        public readonly string $email,
+        public readonly string $password
+    )
+    {}
 }
